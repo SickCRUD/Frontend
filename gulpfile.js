@@ -122,7 +122,7 @@ gulp.task('js', function () {
             gulp.dest('dist/js')
         );
 
-        // TODO: Source maps for the SickCRUD.js
+        // TODO: Source maps for the SickCRUD.js and preserve 'some' comments
 
     return merge(bootstrap, sickCRUD);
 
