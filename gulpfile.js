@@ -5,6 +5,7 @@ let autoprefixer = require('gulp-autoprefixer'),
     cssbeautify = require('gulp-cssbeautify'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
+    merge = require('merge-stream'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sequence = require('gulp-sequence'),
@@ -98,13 +99,32 @@ gulp.task('css', function () {
 // GULP CSS MINIFY TO MINIFY CSS
 gulp.task('js', function () {
 
-    return gulp.src([
+    let bootstrap = gulp.src([
         'src/bootstrap/js/*.js',
         'src/bootstrap/js/*.js.map',
     ])
         .pipe(
             gulp.dest('dist/js')
         );
+
+    let sickCRUD = gulp.src([
+        'src/sick-crud/js/*.js'
+    ])
+        .pipe(
+            uglify({
+                mangle: true,
+                compress: {
+                    typeofs: false
+                }
+            })
+        )
+        .pipe(
+            gulp.dest('dist/js')
+        );
+
+        // TODO: Source maps for the SickCRUD.js
+
+    return merge(bootstrap, sickCRUD);
 
 });
 
