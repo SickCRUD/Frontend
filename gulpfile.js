@@ -1,4 +1,5 @@
 let autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create(),
     cleanCSS = require('gulp-clean-css'),
     concat = require('gulp-concat'),
     cssbeautify = require('gulp-cssbeautify'),
@@ -7,10 +8,38 @@ let autoprefixer = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sequence = require('gulp-sequence'),
+    sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify');
 
 // COMPILING VARIABLES
 let production = false;
+
+// GULP WATCH TO COMPILE CSS AND SERVE WHILE DEVELOPING
+gulp.task('serve', function () {
+
+    browserSync.init({
+        server: {
+            baseDir: './pages',
+            index: 'index.html',
+            routes: {
+                '/css': 'dist/css',
+                '/js': 'dist/js'
+            }
+        }
+    });
+
+    gulp.watch([
+        'src/sick-crud/*.scss',
+        'src/sick-crud/**/*.scss'
+    ], ['sass']);
+
+    gulp.watch([
+        'pages/*.html',
+        'pages/**/*.html'
+    ])
+        .on('change', browserSync.reload);
+
+});
 
 // GULP TO COMPILE SCSS
 gulp.task('sass', function () {
@@ -36,22 +65,15 @@ gulp.task('sass', function () {
         )
         .pipe(
             gulp.dest('dist/css')
+        )
+        .pipe(
+            browserSync.stream()
         );
 
 });
 
-// GULP WATCH TO COMPILE CSS WHILE DEVELOPING
-gulp.task('watch', function () {
-
-    gulp.watch([
-        'src/sick-crud/*.scss'
-    ], ['sass']);
-
-});
-
-
 // GULP CSS MINIFY TO MINIFY CSS
-gulp.task('css-minify', function () {
+gulp.task('css', function () {
 
     return gulp.src([
         'dist/css/*',
@@ -73,3 +95,15 @@ gulp.task('css-minify', function () {
 
 });
 
+// GULP CSS MINIFY TO MINIFY CSS
+gulp.task('js', function () {
+
+    return gulp.src([
+        'src/bootstrap/js/*.js',
+        'src/bootstrap/js/*.js.map',
+    ])
+        .pipe(
+            gulp.dest('dist/js')
+        );
+
+});
