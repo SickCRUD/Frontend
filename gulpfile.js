@@ -46,7 +46,7 @@ gulp.task('sass', function () {
 
     return gulp.src([
         'src/bootstrap/scss/bootstrap.scss',
-        'src/sick-crud/sick-crud.scss'
+        'src/sick-crud/scss/sick-crud.scss'
     ])
         .pipe(
             sass().on('error', sass.logError)
