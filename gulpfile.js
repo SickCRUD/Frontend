@@ -107,3 +107,6 @@ gulp.task('js', function () {
         );
 
 });
+
+// DEFAULT GULP TASK
+gulp.task('default', ['sass', 'css', 'js']);
