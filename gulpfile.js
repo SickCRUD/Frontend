@@ -35,6 +35,11 @@ gulp.task('serve', function () {
     ], ['sass']);
 
     gulp.watch([
+        'src/sick-crud/js/*.js',
+        'src/sick-crud/js/**/*.js'
+    ], ['js']);
+
+    gulp.watch([
         'pages/*.html',
         'pages/**/*.html'
     ])
