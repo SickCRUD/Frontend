@@ -41,7 +41,7 @@
 
 }
 
-@include no-flexbox(){
+@include no-flexbox() {
 
   .login-page, .register-page, .forgot-password-page {
     .form-box {
