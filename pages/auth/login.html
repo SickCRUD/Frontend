@@ -24,17 +24,19 @@
             <form method="post">
 
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" name="email" class="form-control" placeholder="Email">
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password">
                 </div>
 
                 <div class="row no-gutters align-items-center justify-content-between">
 
                     <div class="form-check">
-                        <label class="form-check-label"><input type="checkbox" class="form-check-input">Remember me</label>
+                        <label class="form-check-label">
+                            <input type="checkbox" name="remember" class="form-check-input"> Remember me
+                        </label>
                     </div>
 
                     <div class="form-check">
@@ -50,6 +52,8 @@
         </div>
 
     </div>
+
+    <script src="../js/plugins/modernizr/modernizr-custom.min.js"></script>
 
 </body>
 </html>
