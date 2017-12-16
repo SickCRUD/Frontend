@@ -4,6 +4,16 @@
  */
 
 
+/**
+ *  Import bootstrap mixins
+ */
+@import "../../bootstrap/scss/functions";
+@import "../../bootstrap/scss/variables";
+@import "../../bootstrap/scss/mixins";
+
+/**
+ *  Template components
+ */
 @import "side-menu";
 
 /**
