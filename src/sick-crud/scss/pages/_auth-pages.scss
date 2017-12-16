@@ -15,6 +15,7 @@
     border-radius: 1px;
     box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.16), 0 0 19px 0 rgba(0, 0, 0, 0.16);
     margin: 0 auto;
+    max-width:100%;
     min-height: 350px;
     padding: 14px 18px;
     width: 400px;
@@ -29,6 +30,7 @@
     height: 125px;
     line-height: 125px;
     margin: 18px auto;
+    max-width:100%;
     text-align: center;
     width: 125px;
     img {
@@ -52,16 +54,6 @@
     }
     .container {
       position: relative;
-    }
-  }
-
-}
-
-@include media-breakpoint-down(xs) {
-
-  .login-page, .register-page, .forgot-password-page {
-    .form-box, .logo {
-      max-width:100%;
     }
   }
 
