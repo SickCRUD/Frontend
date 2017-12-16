@@ -1,0 +1,8 @@
+
+@mixin no-flexbox() {
+
+  .no-flexbox {
+    @content;
+  }
+
+}
