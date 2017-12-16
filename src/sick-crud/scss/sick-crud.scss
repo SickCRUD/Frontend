@@ -3,6 +3,11 @@
  * Licensed under MIT (https://github.com/SickCRUD/Frontend/blob/master/LICENSE)
  */
 
+/**
+ *  Overrides
+ */
+@import "overrides/global";
+@import "overrides/bootstrap";
 
 /**
  *  Import bootstrap mixins
@@ -12,9 +17,15 @@
 @import "../../bootstrap/scss/mixins";
 
 /**
+ *  Import template mixins
+ */
+@import "mixins/flex-fallback";
+
+/**
  *  Template components
  */
-@import "side-menu";
+@import "components/side-menu";
+@import "components/navbar-menu";
 
 /**
  *  Pages
