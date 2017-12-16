@@ -1,0 +1,9 @@
+/*
+ *  Global reset styling
+ */
+
+// TODO: override bootstrap in another way creating a theme
+
+.btn, .form-control {
+  border-radius: $border-radius;
+}
