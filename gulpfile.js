@@ -105,8 +105,7 @@ gulp.task('css', function () {
 gulp.task('js', function () {
 
     let bootstrap = gulp.src([
-        'src/bootstrap/js/*.js',
-        'src/bootstrap/js/*.js.map',
+        'src/bootstrap/js/*.min.js'
     ])
         .pipe(
             gulp.dest('dist/js')
@@ -127,9 +126,16 @@ gulp.task('js', function () {
             gulp.dest('dist/js')
         );
 
-        // TODO: Source maps for the SickCRUD.js and preserve 'some' comments
+    // TODO: Source maps for the SickCRUD.js and preserve 'some' comments
 
-    return merge(bootstrap, sickCRUD);
+    let plugins = gulp.src([
+        'src/sick-crud/js/plugins/**/*.min.js'
+    ])
+        .pipe(
+            gulp.dest('dist/js/plugins')
+        );
+
+    return merge(bootstrap, sickCRUD, plugins);
 
 });
 
