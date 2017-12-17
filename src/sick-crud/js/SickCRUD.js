@@ -18,4 +18,29 @@ $(function() {
 
     }
 
+    // Hide show-password
+    $('input[type=password]').each(function (index) {
+
+        $(this).hideShowPassword({
+            show: false,
+            innerToggle: 'focus',
+            toggle: {
+                className: 'text-toggle',
+            },
+            states: {
+                shown: {
+                    toggle: {
+                        content: $(this).attr('data-show') || 'Hide',
+                    }
+                },
+                hidden: {
+                    toggle: {
+                        content: $(this).attr('data-hide') || 'Show',
+                    }
+                }
+            }
+        });
+
+    });
+
 });
