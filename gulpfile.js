@@ -126,6 +126,8 @@ gulp.task('js', function () {
                 compress: {
                     typeofs: false
                 }
+            }).on('error', function(uglify) {
+                console.error(uglify.message);
             })
         )
         .pipe(
