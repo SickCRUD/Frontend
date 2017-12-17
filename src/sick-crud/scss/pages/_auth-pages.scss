@@ -4,6 +4,8 @@
 
   .container {
     min-height: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .form-box {
@@ -60,16 +62,6 @@
       position: relative;
     }
 
-  }
-
-}
-
-// Small height screen fixes
-@media screen and (max-height: 600px) {
-
-  .container {
-    padding-top: 20px;
-    padding-bottom: 20px;
   }
 
 }
