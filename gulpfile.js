@@ -3,6 +3,7 @@ let autoprefixer = require('gulp-autoprefixer'),
     cleanCSS = require('gulp-clean-css'),
     concat = require('gulp-concat'),
     cssbeautify = require('gulp-cssbeautify'),
+    del = require('del'),
     gulp = require('gulp'),
     gulpif = require('gulp-if'),
     merge = require('merge-stream'),
@@ -10,7 +11,9 @@ let autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
     sequence = require('gulp-sequence'),
     sourcemaps = require('gulp-sourcemaps'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    vinylPaths = require('vinyl-paths');
+
 
 // COMPILING VARIABLES
 let production = false;
@@ -24,7 +27,8 @@ gulp.task('serve', function () {
             index: 'index.html',
             routes: {
                 '/css': 'dist/css',
-                '/js': 'dist/js'
+                '/js': 'dist/js',
+                '/plugins': 'dist/plugins'
             }
         }
     });
@@ -105,7 +109,8 @@ gulp.task('css', function () {
 gulp.task('js', function () {
 
     let bootstrap = gulp.src([
-        'src/bootstrap/js/*.min.js'
+        'src/bootstrap/js/*.min.js',
+        '!src/bootstrap/js/bootstrap.bundle.min.js'
     ])
         .pipe(
             gulp.dest('dist/js')
@@ -123,17 +128,32 @@ gulp.task('js', function () {
             })
         )
         .pipe(
+            rename({ suffix: '.min' })
+        )
+        .pipe(
             gulp.dest('dist/js')
         );
 
     // TODO: Source maps for the SickCRUD.js and preserve 'some' comments
 
     let plugins = gulp.src([
-        'src/sick-crud/js/plugins/**/*.min.js'
+        'src/sick-crud/plugins/**/*.min.js',
+        'src/sick-crud/plugins/**/'
     ])
         .pipe(
-            gulp.dest('dist/js/plugins')
-        );
+            gulp.dest('dist/plugins')
+        )
+        .on('end', function () {
+
+            gulp.src([
+                'dist/plugins/**/*.js',
+                '!dist/plugins/**/*.min.js'
+            ])
+                .pipe(
+                    vinylPaths(del)
+                );
+
+        });
 
     return merge(bootstrap, sickCRUD, plugins);
 
