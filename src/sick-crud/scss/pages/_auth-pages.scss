@@ -41,6 +41,10 @@
     }
   }
 
+  .form-check-label {
+    padding-left: 0;
+  }
+
 }
 
 @include no-flexbox() {
