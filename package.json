@@ -29,11 +29,11 @@
     "bootstrap4",
     "dashboard"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "license": "MIT",
   "devDependencies": {
     "browser-sync": ">=2.18.13",
+    "del": "^3.0.0",
     "gulp": ">=3.9.1",
     "gulp-autoprefixer": ">=4.0.0",
     "gulp-clean-css": ">=3.9.0",
@@ -46,7 +46,7 @@
     "gulp-sourcemaps": ">=2.6.1",
     "gulp-uglify": ">=3.0.0",
     "merge-stream": ">=1.0.1",
-    "del": "^3.0.0",
+    "run-sequence": "^2.2.0",
     "vinyl-paths": "^2.1.0"
   }
 }

@@ -8,6 +8,7 @@ let autoprefixer = require('gulp-autoprefixer'),
     gulpif = require('gulp-if'),
     merge = require('merge-stream'),
     rename = require('gulp-rename'),
+    runSequence  = require('run-sequence'),
     sass = require('gulp-sass'),
     sequence = require('gulp-sequence'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -105,7 +106,7 @@ gulp.task('css', function () {
 
 });
 
-// GULP CSS MINIFY TO MINIFY CSS
+// GULP JS MINIFY TO MINIFY JS
 gulp.task('js', function () {
 
     let bootstrap = gulp.src([
@@ -128,7 +129,9 @@ gulp.task('js', function () {
             })
         )
         .pipe(
-            rename({ suffix: '.min' })
+            rename({
+                suffix: '.min'
+            })
         )
         .pipe(
             gulp.dest('dist/js')
@@ -160,4 +163,6 @@ gulp.task('js', function () {
 });
 
 // DEFAULT GULP TASK
-gulp.task('default', ['sass', 'css', 'js']);
+gulp.task('default', function() {
+    runSequence('sass', 'css', 'js');
+});
