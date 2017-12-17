@@ -62,3 +62,16 @@
   }
 
 }
+
+// Small height screen fixes
+@media screen and (max-height: 600px) {
+
+  .login-page, .register-page, .forgot-password-page {
+    height: auto;
+  }
+  .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+}
