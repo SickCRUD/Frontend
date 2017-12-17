@@ -44,5 +44,10 @@
     "gulp-uglify": ">=3.0.0",
     "merge-stream": ">=1.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "vinyl-paths": "^2.1.0"
+  }
 }
