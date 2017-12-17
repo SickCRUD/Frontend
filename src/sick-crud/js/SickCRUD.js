@@ -7,4 +7,15 @@ $(function() {
 
     });
 
+    // Internet Explorer FIX
+    if($('html').hasClass('ie')){
+
+        var loginRegisterForgotPasswordPage = $('.login-page, .register-page, .forgot-password-page'),
+            loginFormBoxWrapper = loginRegisterForgotPasswordPage.find('.form-box-wrapper').first(),
+            loginFormBox = loginRegisterForgotPasswordPage.find('.form-box').first();
+
+        loginFormBoxWrapper.css('min-height', loginFormBox.height() + 20);
+
+    }
+
 });
