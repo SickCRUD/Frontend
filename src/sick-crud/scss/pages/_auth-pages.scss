@@ -1,4 +1,4 @@
-.login-page, .register-page, .forgot-password-page {
+.auth-page {
 
   // TODO: background should be changed with a $variable
   background: #fafafa;
@@ -55,7 +55,7 @@
 // Only if is Internet Explorer
 @include is-ie() {
 
-  .login-page, .register-page, .forgot-password-page {
+  .auth-page {
 
     .form-box {
       position: absolute;
