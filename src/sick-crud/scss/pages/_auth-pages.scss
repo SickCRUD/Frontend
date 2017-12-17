@@ -1,5 +1,6 @@
 .login-page, .register-page, .forgot-password-page {
 
+  // TODO: background should be changed with a $variable
   background: #fafafa;
 
   .container {
@@ -17,6 +18,10 @@
     min-height: 350px;
     padding: 14px 18px;
     width: 400px;
+  }
+
+  .form-box-wrapper {
+    width: 100%;
   }
 
   .logo {
@@ -47,7 +52,8 @@
 
 }
 
-@include no-flexbox() {
+// Only if is Internet Explorer
+@include is-ie() {
 
   .login-page, .register-page, .forgot-password-page {
 
@@ -57,11 +63,29 @@
       left: 50%;
       transform: translateY(-50%) translateX(-50%);
     }
-
+    
+    .form-box-wrapper {
+      overflow: hidden;
+    }
+    
     .container {
       position: relative;
+      overflow: hidden;
     }
 
+  }
+
+  // A little bit hacky, but it's fine like this ^^
+  .login-page .form-box-wrapper {
+    min-height: 469px;
+  }
+
+  .register-page .form-box-wrapper {
+    min-height: 570px;
+  }
+
+  .forgot-password-page .form-box-wrapper {
+    min-height: 366px;
   }
 
 }
