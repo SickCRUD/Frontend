@@ -29,7 +29,8 @@ gulp.task('serve', function () {
             routes: {
                 '/css': 'dist/css',
                 '/js': 'dist/js',
-                '/plugins': 'dist/plugins'
+                '/plugins': 'dist/plugins',
+                '/img': 'dist/img'
             }
         }
     });
@@ -65,7 +66,7 @@ gulp.task('sass', function () {
         .pipe(
             autoprefixer({
                 browsers: ['> 1%', 'last 2 versions', 'firefox >= 4', 'safari 7', 'safari 8', 'IE 8', 'IE 9', 'IE 10', 'IE 11'],
-                cascade: false
+                cascade: true
             })
         )
         .pipe(
@@ -164,7 +165,21 @@ gulp.task('js', function () {
 
 });
 
+// TASK TO COPY IMGS
+gulp.task('img', function () {
+
+    return gulp.src([
+        'src/sick-crud/img/**/*',
+    ])
+        .pipe(
+            gulp.dest('dist/img')
+        );
+
+
+});
+
+
 // DEFAULT GULP TASK
 gulp.task('default', function() {
-    runSequence('sass', 'css', 'js');
+    runSequence('sass', 'css', 'js', 'img');
 });
