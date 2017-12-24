@@ -1,79 +1,73 @@
 .auth-page {
 
-  // TODO: background should be changed with a $variable
-  background: #fafafa;
+  // ie 9 compatible
+  display: table;
 
-  .container {
-    min-height: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+  .auth-box-aligned-y {
 
-  .form-box {
-    background: white;
-    border-radius: 1px;
-    box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.16), 0 0 19px 0 rgba(0, 0, 0, 0.16);
-    margin: 0 auto;
-    max-width: 100%;
-    min-height: 350px;
-    padding: 14px 18px;
-    width: 400px;
-  }
+    // ie 9 compatible
+    display: table-cell;
+    padding: 20px 10px;
+    position: relative;
+    vertical-align: middle;
+    z-index: 9999;
 
-  .form-box-wrapper {
-    width: 100%;
-  }
+    .auth-box {
 
-  .logo {
-    background: #5599ff;
-    border-radius: $border-radius;
-    color: #fff;
-    font-size: 70px;
-    font-weight:500;
-    height: 125px;
-    line-height: 125px;
-    margin: 18px auto;
-    max-width: 100%;
-    text-align: center;
-    width: 125px;
+      background: white;
+      border-radius: 1px;
+      box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.16), 0 0 19px 0 rgba(0, 0, 0, 0.16);
+      margin: 0 auto;
+      max-width: 400px;
+      padding: 14px 18px;
+      width: 100%;
 
-    img {
-      max-width: 100%;
-      max-height: 100%;
-      vertical-align: baseline;
-      border-radius: inherit;
-    }
+      .logo {
 
-  }
+        background: #5599ff;
+        border-radius: 0;
+        color: #fff;
+        font-size: 70px;
+        font-weight: 500;
+        height: 125px;
+        line-height: 125px;
+        margin: 18px auto;
+        max-width: 100%;
+        text-align: center;
+        width: 125px;
 
-  .form-check-label {
-    padding-left: 0;
-  }
+        img {
+          border-radius: inherit;
+          max-height: 100%;
+          max-width: 100%;
+          vertical-align: baseline;
+        }
 
-}
+      }
 
-// Only if is Internet Explorer
-@include is-ie() {
+      .form-check-label {
+        padding-left: 0;
+      }
 
-  .auth-page {
-
-    .form-box {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateY(-50%) translateX(-50%);
-    }
-    
-    .form-box-wrapper {
-      overflow: hidden;
-    }
-    
-    .container {
-      position: relative;
-      overflow: hidden;
     }
 
   }
 
 }
 
+.background-image {
+  background-image: url('../img/backgrounds/login-page.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  display: block;
+  filter: blur(1.5px);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  // ie 9 z-index >=0
+  z-index: 0;
+}
