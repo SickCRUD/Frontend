@@ -14,3 +14,11 @@
   }
 
 }
+
+@mixin no-js() {
+
+  .no-js {
+    @content;
+  }
+
+}

@@ -3,7 +3,7 @@
   // ie 9 compatible
   display: table;
 
-  .auth-box-aligned-y {
+  .auth-box-aligned {
 
     // ie 9 compatible
     display: table-cell;
@@ -47,6 +47,26 @@
 
       .form-check-label {
         padding-left: 0;
+      }
+
+    }
+
+  }
+
+}
+
+@include no-js() {
+
+  .auth-page {
+
+    .auth-box-aligned {
+
+      .auth-box {
+
+        .form-check-label {
+          padding-left: 20px;
+        }
+
       }
 
     }
