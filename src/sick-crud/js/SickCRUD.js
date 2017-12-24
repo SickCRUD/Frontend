@@ -7,17 +7,6 @@ $(function() {
 
     });
 
-    // Internet Explorer FIX
-    if($('html').hasClass('ie')){
-
-        var loginRegisterForgotPasswordPage = $('.auth-page'),
-            loginFormBoxWrapper = loginRegisterForgotPasswordPage.find('.form-box-wrapper').first(),
-            loginFormBox = loginRegisterForgotPasswordPage.find('.form-box').first();
-
-        loginFormBoxWrapper.css('min-height', loginFormBox.height() + 20);
-
-    }
-
     // Hide show-password
     $('input[type=password]').each(function (index) {
 
@@ -30,12 +19,12 @@ $(function() {
             states: {
                 shown: {
                     toggle: {
-                        content: $(this).attr('data-show') || 'Hide',
+                        content: $(this).attr('data-hide') || 'Hide',
                     }
                 },
                 hidden: {
                     toggle: {
-                        content: $(this).attr('data-hide') || 'Show',
+                        content: $(this).attr('data-show') || 'Show',
                     }
                 }
             }
