@@ -1,0 +1,34 @@
+/*!
+ * Sick CRUD Frontend
+ * Licensed under MIT (https://github.com/SickCRUD/Frontend/blob/master/LICENSE)
+ */
+
+/**
+ *  Overrides
+ */
+@import "overrides/global";
+@import "overrides/bootstrap";
+
+/**
+ *  Import bootstrap mixins
+ */
+@import "../../dependencies/bootstrap/scss/functions";
+@import "../../dependencies/bootstrap/scss/variables";
+@import "../../dependencies/bootstrap/scss/mixins";
+
+/**
+ *  Import template mixins
+ */
+@import "mixins/fallback";
+
+/**
+ *  Template components
+ */
+@import "components/navbar";
+@import "components/side-menu";
+@import "components/navbar-menu";
+
+/**
+ *  Pages
+ */
+@import "pages/auth-pages";

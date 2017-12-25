@@ -1,0 +1,102 @@
+.auth-page {
+
+  // ie 9 compatible
+  display: table;
+
+  .auth-box-container{
+
+    width: 100%;
+    min-height: calc(100vh - 55px);
+    height: calc(100% - 55px);
+    position: relative;
+
+    .auth-box-aligned {
+
+      // ie 9 compatible
+      display: table-cell;
+      padding: 20px 10px;
+      position: relative;
+      vertical-align: middle;
+      z-index: 999;
+
+      .auth-box {
+
+        background: white;
+        border-radius: 1px;
+        box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.16), 0 0 19px 0 rgba(0, 0, 0, 0.16);
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 14px 18px;
+        width: 100%;
+
+        .logo {
+
+          background: #5599ff;
+          border-radius: 0;
+          color: #fff;
+          font-size: 70px;
+          font-weight: 500;
+          height: 125px;
+          line-height: 125px;
+          margin: 18px auto;
+          max-width: 100%;
+          text-align: center;
+          width: 125px;
+
+          img {
+            border-radius: inherit;
+            max-height: 100%;
+            max-width: 100%;
+            vertical-align: baseline;
+          }
+
+        }
+
+        .form-check-label {
+          padding-left: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@include no-js() {
+
+  .auth-page {
+
+    .auth-box-aligned {
+
+      .auth-box {
+
+        .form-check-label {
+          padding-left: 20px;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.background-image {
+  background-image: url('../img/backgrounds/login-page.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  display: block;
+  filter: blur(1.5px);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  // ie 9 z-index >=0
+  z-index: 0;
+}
