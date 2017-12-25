@@ -36,13 +36,13 @@ gulp.task('serve', function () {
     });
 
     gulp.watch([
-        'src/sick-crud/*.scss',
-        'src/sick-crud/**/*.scss'
+        'src/*.scss',
+        'src/**/*.scss'
     ], ['sass']);
 
     gulp.watch([
-        'src/sick-crud/js/*.js',
-        'src/sick-crud/js/**/*.js'
+        'src/js/*.js',
+        'src/**/*.js'
     ], ['js']);
 
     gulp.watch([
@@ -57,8 +57,7 @@ gulp.task('serve', function () {
 gulp.task('sass', function () {
 
     return gulp.src([
-        'src/bootstrap/scss/bootstrap.scss',
-        'src/sick-crud/scss/sick-crud.scss'
+        'src/scss/sick-crud.scss'
     ])
         .pipe(
             sass().on('error', sass.logError)
@@ -110,17 +109,12 @@ gulp.task('css', function () {
 // GULP JS MINIFY TO MINIFY JS
 gulp.task('js', function () {
 
-    let bootstrap = gulp.src([
-        'src/bootstrap/js/*.min.js',
-        '!src/bootstrap/js/bootstrap.bundle.min.js'
+    return gulp.src([
+        'src/js/*.js'
     ])
         .pipe(
             gulp.dest('dist/js')
-        );
-
-    let sickCRUD = gulp.src([
-        'src/sick-crud/js/*.js'
-    ])
+        )
         .pipe(
             uglify({
                 mangle: true,
@@ -142,39 +136,17 @@ gulp.task('js', function () {
 
     // TODO: Source maps for the SickCRUD.js and preserve 'some' comments
 
-    let plugins = gulp.src([
-        'src/sick-crud/plugins/**/*.min.js',
-        'src/sick-crud/plugins/**/'
-    ])
-        .pipe(
-            gulp.dest('dist/plugins')
-        )
-        .on('end', function () {
-
-            gulp.src([
-                'dist/plugins/**/*.js',
-                '!dist/plugins/**/*.min.js'
-            ])
-                .pipe(
-                    vinylPaths(del)
-                );
-
-        });
-
-    return merge(bootstrap, sickCRUD, plugins);
-
 });
 
 // TASK TO COPY IMGS
 gulp.task('img', function () {
 
     return gulp.src([
-        'src/sick-crud/img/**/*',
+        'src/img/**/*',
     ])
         .pipe(
             gulp.dest('dist/img')
         );
-
 
 });
 
