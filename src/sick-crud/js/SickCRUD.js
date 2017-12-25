@@ -12,7 +12,7 @@ $(function() {
 
         var $currentField = $(this),
             $currentFieldBackgroundSize,
-            $currentFiledSpaceRightSize;
+            $currentFieldSpaceRightSize;
 
         $currentField.hideShowPassword({
             show: false,
@@ -37,18 +37,21 @@ $(function() {
         // fix last-pass like services
         setTimeout(function() {
             $currentFieldBackgroundSize = $currentField.css('background-size').split(' ');
-            $currentFiledPaddingRightSize = 0;
+            $currentFieldSpaceRightSize = 0;
+
             for(var $currentFieldSide in $currentFieldBackgroundSize){
                 // if width or height is set
                 if($currentFieldBackgroundSize[$currentFieldSide]) {
                     var $currentBackgroundSize = parseInt($currentFieldBackgroundSize[$currentFieldSide].slice(0, -2));
                     // 35px as a threshold should be enough ?
-                    if($currentBackgroundSize < 35 && $currentBackgroundSize > $currentFiledSpaceRightSize) {
-                        $currentFiledSpaceRightSize = $currentBackgroundSize + 5;
+                    if($currentBackgroundSize < 35 && $currentBackgroundSize > $currentFieldSpaceRightSize) {
+                        $currentFieldSpaceRightSize = $currentBackgroundSize + (5 * (window.devicePixelRatio || 1));
                     }
                 }
             }
-            $currentField.parent('.hideShowPassword-wrapper').find('button[type=button]').css('right', $currentFiledSpaceRightSize + 'px');
+
+
+            $currentField.parent('.hideShowPassword-wrapper').find('button[type=button]').css('right', $currentFieldSpaceRightSize + 'px');
         }, 500);
 
     });
