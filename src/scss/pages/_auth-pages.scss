@@ -21,7 +21,7 @@
 
       .auth-box {
 
-        background: white;
+        background: $sc-white;
         border-radius: 1px;
         box-shadow: 0 0 19px 0 rgba(0, 0, 0, 0.16), 0 0 19px 0 rgba(0, 0, 0, 0.16);
         margin: 0 auto;
@@ -31,9 +31,9 @@
 
         .logo {
 
-          background: #5599ff;
+          background: $sc-primary;
           border-radius: 0;
-          color: #fff;
+          color: $sc-white;
           font-size: 70px;
           font-weight: 500;
           height: 125px;
