@@ -1,11 +1,44 @@
-.sc-navbar {
+.main-header {
 
-  z-index: 9999;
-  height: 55px;
-  border: 0;
-  //background-color: #23b7e5;
-  //background-image: linear-gradient(90deg,#23b7e5 0,#51c6ea);
-  background-repeat: repeat-x;
-  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  .sc-navbar {
+    background-color: $sc-primary;
+    background-repeat: repeat-x;
+    border: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    height: $sc-navbar-height;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 2000;
+
+    // Thanks to AdminLTE
+    //Logo bar
+    .logo {
+      background-color: darken($sc-primary, 5%);
+      color: $sc-logo-color;
+      display: block;
+      float: left;
+      font-size: 20px;
+      font-weight: 300;
+      height: $sc-navbar-height;
+      line-height: 50px;
+      overflow: hidden;
+      padding: 0 15px;
+      text-align: center;
+      text-decoration: none;
+      width: $sc-sidebar-width;
+      //Add support to sidebar mini by allowing the user to create
+      //2 logo designs. mini and lg
+      .logo-lg {
+        //should be visibile when sidebar isn't collapsed
+        display: block;
+      }
+
+      .logo-mini {
+        display: none;
+      }
+
+    }
+
+  }
 
 }
