@@ -1,0 +1,10 @@
+// override bootstrap default colors
+@each $color, $value in $sc-theme-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+.btn {
+  border-radius: $sc-btn-border-radius;
+}
