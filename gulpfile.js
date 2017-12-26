@@ -29,7 +29,8 @@ gulp.task('serve', function () {
             routes: {
                 '/css': 'dist/css',
                 '/js': 'dist/js',
-                '/plugins': 'dist/plugins',
+                '/plugins': 'plugins',
+                '/dependencies': 'dependencies',
                 '/img': 'dist/img'
             }
         }
@@ -57,7 +58,8 @@ gulp.task('serve', function () {
 gulp.task('sass', function () {
 
     return gulp.src([
-        'src/scss/sick-crud.scss'
+        'src/scss/sick-crud.scss',
+        'src/scss/skins/*.scss'
     ])
         .pipe(
             sass().on('error', sass.logError)
