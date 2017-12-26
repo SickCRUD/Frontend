@@ -4,13 +4,7 @@
  */
 
 /**
- *  Overrides
- */
-@import "overrides/global";
-@import "overrides/bootstrap";
-
-/**
- *  Import bootstrap mixins
+ *  Import Bootstrap mixins
  */
 @import "../../dependencies/bootstrap/scss/functions";
 @import "../../dependencies/bootstrap/scss/variables";
@@ -22,11 +16,23 @@
 @import "mixins/fallback";
 
 /**
+ *  Import variables
+ */
+@import "variables";
+
+/**
+ *  Overrides
+ */
+@import "overrides/global";
+
+/**
  *  Template components
  */
+@import "components/buttons";
+@import "components/forms";
 @import "components/navbar";
-@import "components/side-menu";
 @import "components/navbar-menu";
+@import "components/side-menu";
 
 /**
  *  Pages
