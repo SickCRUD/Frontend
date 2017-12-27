@@ -1,5 +1,75 @@
-/**
- *  Variables
- */
+// DEFAULT COLORS
+// --------------------------------------------------------
 
-$border-radius: 0;
+$sc-white:    #fff !default;
+$sc-gray-100: #f8f9fa !default;
+$sc-gray-200: #e9ecef !default;
+$sc-gray-300: #dee2e6 !default;
+$sc-gray-400: #ced4da !default;
+$sc-gray-500: #adb5bd !default;
+$sc-gray-600: #868e96 !default;
+$sc-gray-700: #495057 !default;
+$sc-gray-800: #343a40 !default;
+$sc-gray-900: #212529 !default;
+$sc-black:    #000 !default;
+
+$sc-dark-blue:    #343a40 !default;
+$sc-dark-blue-v2: #2f4150 !default;
+$sc-grey:         #636c76 !default;
+$sc-blue:         #0796ff !default;
+$sc-green:        #2e9746 !default;
+$sc-red:          #dc3545 !default;
+$sc-yellow:       #ffbf00 !default;
+$sc-light-grey:   #f8f9fa !default;
+
+// REFERENCED COLORS
+$sc-primary: $sc-dark-blue;
+
+$sc-theme-colors: () !default;
+$sc-theme-colors: map-merge((
+  "primary":    $sc-dark-blue,
+  "secondary":  $sc-grey,
+  "success":    $sc-green,
+  "info":       $sc-green,
+  "warning":    $sc-yellow,
+  "danger":     $sc-red,
+  "light":      $sc-light-grey,
+  "dark":       $sc-dark-blue-v2
+), $sc-theme-colors);
+
+// LAYOUT
+// --------------------------------------------------------
+$sc-body-color: $sc-gray-200;
+$sc-navbar-height: 50px;
+$sc-sidebar-width: 230px;
+$sc-boxed-layout-max-width: 1024px;
+// $sc-screen-header-collapse: $screen-xs-max;
+
+// LOGO
+// --------------------------------------------------------
+$sc-logo-color: $sc-white;
+
+// LINKS
+// --------------------------------------------------------
+$sc-link-color: #ffffff;
+$sc-link-hover-color: lighten($link-color, 15%);
+
+// BUTTONS
+// --------------------------------------------------------
+$sc-btn-boxshadow: none;
+$sc-btn-border-radius: 0;
+
+// PROGRESS BARS
+// --------------------------------------------------------
+$sc-progress-bar-border-radius: 1px;
+$sc-progress-bar-sm-border-radius: 1px;
+$sc-progress-bar-xs-border-radius: 1px;
+
+// INPUT
+// --------------------------------------------------------
+$sc-input-border-radius: 0;
+
+// TRANSITIONS SETTINGS
+// --------------------------------------------------------
+$sc-transition-speed: .3s;
+$sc-transition-fn: ease-in-out;
