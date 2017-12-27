@@ -3,12 +3,16 @@
   // ie 9 compatible
   display: table;
 
-  .auth-box-container{
+  .auth-box-container {
 
     width: 100%;
-    min-height: calc(100vh - 55px);
-    height: calc(100% - 55px);
+    min-height: calc(100vh - #{$sc-navbar-height});
+    height: calc(100% - #{$sc-navbar-height});
     position: relative;
+
+    &.navbar-fixed {
+      padding-top: $sc-navbar-height;
+    }
 
     .auth-box-aligned {
 
