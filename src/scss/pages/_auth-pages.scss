@@ -1,5 +1,9 @@
 .auth-page {
 
+  [type=submit] {
+    text-transform: uppercase;
+  }
+
   // ie 9 compatible
   display: table;
 
@@ -9,10 +13,6 @@
     min-height: calc(100vh - #{$sc-navbar-height});
     height: calc(100% - #{$sc-navbar-height});
     position: relative;
-
-    &.navbar-fixed {
-      margin-top: $sc-navbar-height;
-    }
 
     .auth-box-aligned {
 
