@@ -25,6 +25,8 @@
       padding: 0 15px;
       text-align: center;
       text-decoration: none;
+      // set the animation duration for resize
+      transition: width 600ms ease-in-out;
       width: $sc-sidebar-width;
       //Add support to sidebar mini by allowing the user to create
       //2 logo designs. mini and lg
@@ -42,3 +44,39 @@
   }
 
 }
+
+@include media-breakpoint-between(xs, sm) {
+
+  .main-header {
+    .navbar {
+
+      .logo {
+
+        width: 200px;
+
+      }
+
+    }
+
+  }
+
+}
+
+@include media-breakpoint-down(xs) {
+
+  .main-header {
+    .navbar {
+
+      .logo {
+
+        display: block;
+        width: 100%;
+
+      }
+
+    }
+
+  }
+
+}
+
