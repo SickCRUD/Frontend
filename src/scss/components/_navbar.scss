@@ -1,6 +1,7 @@
 .main-header {
 
   height: $sc-navbar-height;
+  transition: all 600ms ease-in-out;
 
   // Thanks to AdminLTE
   //Logo bar
@@ -12,12 +13,15 @@
     font-size: 20px;
     font-weight: 300;
     height: $sc-navbar-height;
-    line-height: 50px;
+    line-height: $sc-navbar-height;
     overflow: hidden;
     padding: 0 15px;
     text-align: center;
     text-decoration: none;
+    // set the animation duration for resize
+    transition: width 600ms ease-in-out;
     width: $sc-sidebar-width;
+
     //Add support to sidebar mini by allowing the user to create
     //2 logo designs. mini and lg
     .logo-large {
@@ -31,13 +35,16 @@
 
   }
 
+  .navbar-wrapper {
+    background-color: $sc-primary;
+  }
+
   .navbar {
     background-color: $sc-primary;
     background-repeat: repeat-x;
     border: 0;
     box-shadow: 0 1px 2px rgba(0,0,0,.15);
     height: $sc-navbar-height;
-    margin-left: $sc-sidebar-width;
     min-height: $sc-navbar-height;
     padding-bottom: 0;
     padding-top: 0;
@@ -57,5 +64,46 @@
       }
     }
   }
+
+}
+
+@include media-breakpoint-between(xs, sm) {
+
+  .main-header {
+    .navbar-wrapper {
+
+      .logo {
+
+        width: 200px;
+
+      }
+
+    }
+
+  }
+
+}
+
+@include media-breakpoint-down(xs) {
+
+  .main-header {
+
+    height: 100px;
+
+    .navbar-wrapper {
+
+      .logo {
+
+        display: block;
+        float: none;
+        width: 100%;
+
+      }
+
+    }
+
+  }
+
+
 
 }
