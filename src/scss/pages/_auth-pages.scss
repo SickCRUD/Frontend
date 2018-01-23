@@ -11,7 +11,7 @@
 
     width: 100%;
     min-height: calc(100vh - #{$sc-navbar-height});
-    height: calc(100% - #{$sc-navbar-height});
+    height: calc(100vh - #{$sc-navbar-height});
     position: relative;
 
     .auth-box-aligned {
@@ -82,6 +82,19 @@
 
       }
 
+    }
+
+  }
+
+}
+
+@include media-breakpoint-down(xs){
+
+  .auth-page {
+
+    .auth-box-container {
+      min-height: calc(100vh - #{$sc-navbar-height*2});
+      height: calc(100% - #{$sc-navbar-height*2});
     }
 
   }
