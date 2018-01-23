@@ -1,7 +1,7 @@
 .main-header {
 
   height: $sc-navbar-height;
-  transition: all 600ms ease-in-out;
+  transition: all 300ms ease-out;
 
   // Thanks to AdminLTE
   //Logo bar
@@ -19,7 +19,7 @@
     text-align: center;
     text-decoration: none;
     // set the animation duration for resize
-    transition: width 600ms ease-in-out;
+    transition: width 300ms ease-out;
     width: $sc-sidebar-width;
 
     //Add support to sidebar mini by allowing the user to create
