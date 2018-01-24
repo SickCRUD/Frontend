@@ -58,6 +58,9 @@
       height: 100%;
       line-height: 2rem;
       .nav-item {
+        .nav-link {
+          height: 100%;
+        }
         &:hover {
           background-color: lighten($sc-primary, 4%);
         }
