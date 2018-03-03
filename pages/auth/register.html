@@ -4,6 +4,7 @@
     <title>Sick CRUD - Register page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../dependencies/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/sick-crud.css">
     <link rel="stylesheet" href="../plugins/icheck/css/all.css">
@@ -11,40 +12,45 @@
 </head>
 <body class="auth-page">
 
-    <div class="background-image"></div>
+<div class="wrapper">
 
-    <nav class="sc-navbar navbar navbar-expand-md navbar-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <header class="main-header">
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+        <div class="navbar-wrapper fixed-top">
+
+            <a href="http://sickcrud.it/sick-crud" class="logo">
+
+            <span class="logo-mini">
+                SC
+            </span>
+
+            <span class="logo-large">
+                <b>Sick</b>CRUD
+            </span>
+
+            </a>
+
+            <nav class="navbar navbar-expand-md navbar-dark">
+
+                <ul class="navbar-nav d-flex flex-row ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link p-2" href="login.html">Login <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link p-2" href="register.html">Registration <span class="sr-only">(current)</span></a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
         </div>
-    </nav>
+
+    </header>
+
+    <main class="content">
 
     <div class="d-table auth-box-container">
 
@@ -58,7 +64,7 @@
                     <!-- <span>C</span> -->
                 </div>
 
-                <h5 class="mt-3 mb-4 text-center lead">Log in to your account</h5>
+                <h5 class="mt-3 mb-4 text-center lead">Create your account</h5>
 
                 <form method="post">
                     <div class="form-group">
@@ -96,12 +102,17 @@
 
     </div>
 
-    <script src="../plugins/modernizr/js/modernizr-custom.min.js"></script>
-    <script src="../dependencies/jquery/js/jquery-2.2.4.min.js"></script>
-    <script src="../plugins/icheck/js/icheck.min.js"></script>
-    <script src="../plugins/css_browser_selector/js/css_browser_selector.min.js"></script>
-    <script src="../plugins/hideShowPassword/js/hideShowPassword.min.js"></script>
-    <script src="../js/SickCRUD.min.js"></script>
+    </main>
+
+</div>
+
+<script src="../plugins/modernizr/js/modernizr-custom.min.js"></script>
+<script src="../dependencies/jquery/js/jquery-2.2.4.min.js"></script>
+<script src="../plugins/icheck/js/icheck.min.js"></script>
+<script src="../plugins/css_browser_selector/js/css_browser_selector.min.js"></script>
+<script src="../plugins/hideShowPassword/js/hideShowPassword.min.js"></script>
+<script src="../js/SickCRUD.js"></script>
+<script src="../js/HideShowPassword.js"></script>
 
 </body>
 </html>
